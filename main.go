@@ -237,7 +237,7 @@ func main() {
 
 	if appArgs.PNG {
 		dir := path.Join(folderPath, "PNG")
-		os.MkdirAll(dir, 0644)
+		os.MkdirAll(dir, 0755)
 		for _, sticker := range stickerPackage.Stickers {
 			fmt.Printf("[PNG] %d ... ", sticker.Id)
 			url := fmt.Sprintf("http://sdl-stickershop.line.naver.jp/products/0/0/1/%d/android/stickers/%d.png", stickerPackage.PackageId, sticker.Id)
@@ -254,7 +254,7 @@ func main() {
 
 	if appArgs.APNG || appArgs.GIF {
 		dir := path.Join(folderPath, "APNG")
-		os.MkdirAll(dir, 0644)
+		os.MkdirAll(dir, 0755)
 		for _, sticker := range stickerPackage.Stickers {
 			fmt.Printf("[APNG] %d ... ", sticker.Id)
 			url := fmt.Sprintf("http://sdl-stickershop.line.naver.jp/products/0/0/1/%d/android/animation/%d.png", stickerPackage.PackageId, sticker.Id)
@@ -278,7 +278,7 @@ func main() {
 	if appArgs.GIF {
 		gifDir := path.Join(folderPath, "GIF")
 		apngDir := path.Join(folderPath, "APNG")
-		os.MkdirAll(gifDir, 0644)
+		os.MkdirAll(gifDir, 0755)
 		for _, sticker := range stickerPackage.Stickers {
 			fmt.Printf("[GIF] %d ... ", sticker.Id)
 			err := exec.Command(
